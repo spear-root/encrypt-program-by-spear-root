@@ -21,7 +21,7 @@
 // 2016/02/29 오후 11:30 v2.1.0 완성
 //											(1. access()를 이용한 original.txt 및 key.txt 존재 여부 확인
 //											 2. 프로그램 이름 const char[]에 저장)
-#include "D:\B.C.K\Dropbox\H\ustd\ustd v4.5.6.h"
+#include "ustd v4.5.6.h"
 ​
 void Title();  // 제목 출력
 void ParameterSettings(int argc, char *argv[]);  // 파라미터 및 언어 설정
