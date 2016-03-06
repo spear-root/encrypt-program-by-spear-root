@@ -302,5 +302,21 @@ void Decrypt(char* enc, char* dec)
 ​
 char random_key(int seed)
 {
-	// 뷁
+	long long int tmp1, tmp2, tmp3, key;
+
+	tmp1 = seed * (int)pow(1024, 2) + (long long)(pow(seed, 3));
+	tmp2 = ((seed * (int)pow(1024, 2)) % (long long)(pow(3, 10)) + (int)pow(1024, 2)) / 7;
+	if (tmp2 == 0)
+	{
+		tmp2 = 101;
+	}
+	tmp3 = ((tmp1 * tmp2) % (int)pow(1024, 2) + 11) * 1024;
+
+	key = ((tmp3 % 10000) + (tmp3 * 10000)) % (int)pow(1024, 3);
+
+	key /= 16;
+
+	key %= 128;
+
+	return (char)key;
 }
